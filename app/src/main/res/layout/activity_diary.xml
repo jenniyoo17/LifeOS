@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1209"
+    android:orientation="vertical">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2A1F0F"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📔 Memory Diary"
+            android:textColor="#D4854A"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/summaryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 pending • 0 completed"
+            android:textColor="#9A8468"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"/>
+
+    </LinearLayout>
+
+    <!-- SCROLLABLE CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- PENDING HEADER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="18dp"
+                    android:background="#D4854A"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="PENDING"
+                    android:textColor="#D4854A"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.15"/>
+
+                <TextView
+                    android:id="@+id/pendingBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#1A1209"
+                    android:textSize="11sp"
+                    android:background="@drawable/btn_pending"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pendingContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/noPendingText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="All clear 🌿"
+                android:textColor="#9A8468"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:padding="12dp"
+                android:background="@drawable/card_background"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"/>
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#3D2E18"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- COMPLETED HEADER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="18dp"
+                    android:background="#5A9B57"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="COMPLETED"
+                    android:textColor="#5A9B57"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.15"/>
+
+                <TextView
+                    android:id="@+id/completedBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#1A1209"
+                    android:textSize="11sp"
+                    android:background="@drawable/btn_done"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/completedContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/noCompletedText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nothing completed yet"
+                android:textColor="#9A8468"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:padding="12dp"
+                android:background="@drawable/card_background"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM INPUT PANEL -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2A1F0F"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <Spinner
+            android:id="@+id/categorySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/input_background"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/noteInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/input_background"
+                android:hint="Write a memory..."
+                android:textColorHint="#9A8468"
+                android:textColor="#F0DFC0"
+                android:padding="12dp"
+                android:inputType="textMultiLine"
+                android:maxLines="3"/>
+
+            <Button
+                android:id="@+id/micBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="6dp"
+                android:text="🎤"
+                android:textSize="18sp"
+                android:background="@drawable/btn_secondary"
+                android:padding="0dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/savePendingBtn"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="📌 Pending"
+                android:textColor="#F0DFC0"
+                android:textSize="12sp"
+                android:background="@drawable/btn_pending"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/saveCompletedBtn"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="✅ Done"
+                android:textColor="#F0DFC0"
+                android:textSize="12sp"
+                android:background="@drawable/btn_done"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/askBtn"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="🧠 Ask"
+                android:textColor="#1A1209"
+                android:textSize="12sp"
+                android:background="@drawable/btn_primary"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<!-- res/values/themes.xml -->
+<resources>
+    <style name="Theme.RememberClaw" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#D4854A</item>
+        <item name="colorPrimaryVariant">#A85D2A</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSurface">#1A1209</item>
+        <item name="colorOnSurface">#F0DFC0</item>
+        <item name="android:windowBackground">#1A1209</item>
+        <item name="android:textColorPrimary">#F0DFC0</item>
+        <item name="android:textColorSecondary">#9A8468</item>
+    </style>
+    <style name="Base.Theme.RememberClaw" parent="Theme.Material3.DayNight.NoActionBar"/>
+</resources>
